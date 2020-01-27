@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row row-cols-1 row-cols-md-3">
+        {% for company in companies %}
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="card-body" style="font-size: small"><h5 class="card-title"><a href="{% url 'detail_company' company.pk %}">
+                            {{ company.companyName }}</a></h5>
+                        <p class="card-text">{{ company.tel }}</p>
+                        <p class="card-text">{{ company.address }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

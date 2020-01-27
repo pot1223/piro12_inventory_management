@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="border: #4f4f4f 0.5em">
+    <h3>{{ company.companyName }}</h3>
+    <p>{{ company.tel }}</p>
+    <p>{{ company.address }}</p>
+    <hr>
+    <p>거래 상품 목록</p>
+</div>
+
+    <input type="submit" value="수정" onclick="location.href='{% url "register_company" company.pk %}'">
+    <input type="submit" value="삭제" onclick="location.href=''">
+    <input type="submit" value="목록" onclick="location.href='{% url "list_company" %}'">
+
+{% endblock %}
